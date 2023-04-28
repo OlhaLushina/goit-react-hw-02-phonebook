@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Section = styled.div`
+export const SectionStyled = styled.div`
   width: 400px;
   margin: 0 auto;
 `;
