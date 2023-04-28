@@ -18,8 +18,15 @@ export class App extends Component {
 
   /* Додавання нового контакту */
   addContact = newContact => {
-    if (this.state.contacts.filter(item => item.name === newContact.name)) {
+    if (
+      this.state.contacts.filter(
+        item =>
+          item.name.toLocaleLowerCase().trim() ===
+          newContact.name.toLowerCase().trim()
+      ).length > 0
+    ) {
       alert(`${newContact.name} is already in contacts`);
+      return;
     }
     this.setState(prevState => ({
       contacts: [newContact, ...prevState.contacts],
